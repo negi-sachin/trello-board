@@ -7,15 +7,15 @@ function ViewBoard(props) {
     const board=props.allBoards[props.boardnumber]
    
 
-    return <div>
-        {board.name}
+    return <div className='viewboard'>
+        <h3> {board.name} </h3>
         {props.tasknumber==null
         ?<div>
-                <form>
-                        <input onChange={props.newtask} value={props.taskval}></input>
-                        <button onClick={props.addtask}>Add New task</button>
+     <form className='vbform'>
+          <input onChange={props.newtask} value={props.taskval} placeholder='Enter your task here ' autoFocus></input>
+         <button onClick={props.addtask}>Add task</button>
 
-                </form>
+     </form>
 
        <div>
        <p>Filter:</p>
@@ -30,7 +30,7 @@ function ViewBoard(props) {
             <div>
             {board.Tasks.map((task,index)=>{
               return(
-                    <div key={index} style={{border:'.5px green solid'}} onClick={()=>props.viewtask(index)}>
+                    <div key={index}  onClick={()=>props.viewtask(index)} className='vbtask'>
                    <p> {task.taskname} </p>  
                    <p> status:{task.status} </p>
                    <p>{task.comments.length} comments</p>
@@ -80,7 +80,7 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps=(dispatch)=>{
 return{
     viewtask:(index)=>{
-        console.log('view task',index)
+      
         dispatch({type:'tasknumber',text:index})
     },
     newtask:(e)=>{

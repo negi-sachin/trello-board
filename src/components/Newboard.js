@@ -7,11 +7,11 @@ function Newboard(props) {
      Props=props
     return (
         <div>
-            <h1>New board</h1>
+            <h1 className='newboard'>New board :D</h1>
             
-           <form>
-            <input value={props.boardname} onChange={props.inputboardname}></input>
-            <button onClick={props.addboard}>Add board</button>
+           <form className='newboardform'>
+            <input value={props.boardname} onChange={props.inputboardname} placeholder='Enter your Board name' autoFocus></input>
+            <button onClick={props.addboard} className='something'>+</button>
 
            </form>
             
@@ -33,7 +33,7 @@ const mapDispatchToProps=(dispatch)=>{
             dispatch({type:'input_board_name',text:e.target.value})
         },
         addboard:(e)=>{
-            console.log('addboard called')
+            
 e.preventDefault();
           
             dispatch({type:'addboard',text:{
@@ -47,20 +47,7 @@ e.preventDefault();
 
 }
 
-// const mergeProps=(stateProps, dispatchProps, ownProps) => {
-//   return{
-//       save:dispatchProps.addboard(stateProps.boardname)
-//   }
-// }
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Newboard)
 
-
-//line 42 tasks[]
-// {
-//     taskname:'Task 2',
-   
-//     status:'Pending',
-//     comments:[]
-// }

@@ -3,9 +3,10 @@ import {connect} from 'react-redux'
 function Viewtask(props) {
     const task=props.allBoards[props.boardnumber].Tasks[props.tasknumber]
     return (
-        <div>
-        {task.taskname}
+        <div className='viewtask'>
+       <h5> {task.taskname} </h5> 
         <p>Status:{task.status}</p>
+        <p>Set status:</p>
         <select value={task.status} onChange={props.changestatus}>
             <option value='Pending'>Pending</option>
             <option value='Done'>Done</option>
@@ -17,9 +18,9 @@ function Viewtask(props) {
 
         </form>
 
-        <p>{task.comments.map((comment,index)=>
+        {task.comments.map((comment,index)=>
             <p key={index}> {comment}</p>
-        )}</p>
+        )}
         </div>
     )
 }
@@ -36,7 +37,7 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps=(dispatch)=>{
     return{
         changestatus:(e)=>{
-            console.log('new status',e.target.value)
+           
             dispatch({type:'change_status',text:e.target.value})
         },
         comment:(e)=>{

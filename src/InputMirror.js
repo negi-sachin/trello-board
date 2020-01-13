@@ -6,14 +6,19 @@ import Viewboards from './components/viewboards.js'
 
 function InputMirror(props) {
     return (
-        <div>
+        <>
+        <div className='trello'>Trello Board</div>
+        <div className='subheading'>Manage Your tasks</div>
+        <div className='header'>
             
            <button onClick={props.newboard}>New board+</button>
            <button onClick={props.seeboards}>View Boards</button>
          
-           {props.isnewboard?<Newboard store={store} />:''}
-           {props.isseeboard?<Viewboards store={store}/>:''}
         </div>
+        
+        {props.isnewboard?<Newboard store={store} />:''}
+           {props.isseeboard?<Viewboards store={store}/>:''}
+        </>
     )
 }
 
@@ -31,7 +36,7 @@ const mapDispatchToProps=(dispatch)=>{
         newboard:(e)=>{
             e.preventDefault();
             dispatch({type:'new_board',text:true})
-            console.log('New board request')
+           
         },
 
         seeboards:(e)=>{

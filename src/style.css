@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      background-color: rgba(8, 2, 2, 0.945);
+      color:white;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+.trello{
+    text-align: center;
+    font-size:40px ;
+    margin-bottom: 10px;
+    color: tomato;
+}
+
+.subheading{
+    text-align: center;
+    font-size: small;
+}
+.header{
+    border-bottom: 1px rgb(163, 163, 170) solid;
+    width:100%;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.header button{
+    border: 1px rgba(182, 219, 182, 0.842) solid;
+    border-radius:10px ;
+    background: transparent;
+    min-width: 200px;
+    color:white;
+    margin: 10px;
+    font-size: 30px;
+    
+}
+
+/* newboard.js */
+
+.newboard{
+    
+    text-align: center;
+    font-weight: 100;
+
+}
+
+.newboardform{
+    text-align: center;
+   
+
+}
+
+.newboardform input{
+    height:40px;
+     background-color: rgb(37, 35, 37);
+     color:white;
+     padding: 5px;
+     text-align: center;
+     text-transform: capitalize;
+}
+
+.newboardform button{
+    font-size: 20px;
+    margin-left:10px ;
+}
+
+
+/* viewboards.js */
+
+.viewboards{
+    
+    margin:10px;
+    text-align: center;
+}
+
+.board{
+    border: 1px rgb(114, 111, 114) solid;
+    border-radius:10px ;
+     margin:10px 10px;
+   
+}
+
+.task{
+   
+    border-radius: 10px;
+    background-color: rgba(12, 11, 12, 0.589);
+    width:auto;
+    margin: 15px 20px;
+}
+
+
+/* viewboard.js */
+
+.viewboard{
+border:1px rgb(24, 23, 23) solid;
+margin:10px 10px;
+
+}
+
+.viewboard h3{
+    border-bottom: 1px whitesmoke solid;
+}
+
+.vbform input{
+text-align: center;
+font-size: 20px;
+border-radius: 5px;
+background-color: rgba(0, 0, 0, 0.589);
+color:wheat;
+}
+
+.vbform button{
+    margin-left: 5px;
+    font-size: 15px;
+    background-color: black;
+    color: blanchedalmond;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+
+.vbtask{
+border:.5px rgba(0, 255, 128, 0.377) solid;
+margin: 10px 5px;
+}
+
+/* viewtask */
+
+.viewtask{
+    border: .5px rgb(23, 24, 23) solid;
+}
+
+.viewtask h5{
+    font-weight: 400;
+    font-size: 30px;
+    text-decoration: underline;
+    width: auto;
+}
+
+.viewtask form{
+    margin:20px 0px;
+}
+.viewtask input{
+    text-align: center;
+font-size: 15px;
+border-radius: 5px;
+background-color: rgba(0, 0, 0, 0.589);
+color:wheat;
+}
+
+.vbtask button{
+    margin-left: 5px;
+    font-size: 15px;
+    background-color: black;
+    color: blanchedalmond;
+    border-radius: 50%;
+    padding: 10px;
+}

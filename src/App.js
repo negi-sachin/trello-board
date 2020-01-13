@@ -1,6 +1,6 @@
 import React from 'react';
 import store from './store/store.js'
-import './App.css';
+import './style.css';
 import InputMirror from './InputMirror';
 
 

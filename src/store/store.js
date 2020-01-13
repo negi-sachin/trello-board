@@ -10,23 +10,29 @@ const intialsate={
      taskval:'',
      filter:'All',
     allBoards:[{
-        name:'Board1',
+        name:'DEMO_BOARD',
         Tasks:[{
-            taskname:'Task 1a',
+            taskname:'TASK 1',
             
             status:'Pending',
-            comments:['nice','good']
+            comments:['NICE','GREAT']
         },
         {
-          taskname:'Task 1b',
+          taskname:'TASK 2',
           
-          status:'Pending',
-          comments:[]
-      }]
+          status:'Done',
+          comments:['Good']
+      },
+      {
+        taskname:'TASK 3',
+        
+        status:'In Progress',
+        comments:[]
+    }]
     }]
 }
 const reducer=(state=intialsate,action)=>{
-  console.log('inside reducer',action)
+ 
 
 
   switch(action.type){
@@ -76,13 +82,13 @@ const reducer=(state=intialsate,action)=>{
            
 
        case 'addcomment':
-        return Object.assign({},state,{ allBoards:state.allBoards.map((board,index)=>{
-          if(index==state.boardnumber){
-           console.log(board.name)
+        return Object.assign({},state,{commentval:'', allBoards:state.allBoards.map((board,index)=>{
+          if(index===state.boardnumber){
+          
             return Object.assign({},board,{
               name:board.name,
               Tasks:board.Tasks.map((task,index)=>{
-                if(index==state.tasknumber)
+                if(index===state.tasknumber)
                 return Object.assign({},task,{ comments:[...task.comments,state.commentval]})  
                 else return task 
               })
@@ -99,11 +105,11 @@ const reducer=(state=intialsate,action)=>{
          case 'change_status':
          return Object.assign({},state,{ allBoards:state.allBoards.map((board,index)=>{
          if(index==state.boardnumber){
-          console.log(board.name)
+        
            return Object.assign({},board,{
              name:board.name,
              Tasks:board.Tasks.map((task,index)=>{
-               if(index==state.tasknumber)
+               if(index===state.tasknumber)
                return Object.assign({},task,{ status:action.text})  
                else return task 
              })

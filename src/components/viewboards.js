@@ -5,21 +5,21 @@ import Viewboard from './ViewBoard'
 
 function Viewboards(props) {
     return (
-        <div>
-            <h4>All boards here</h4>
+        <div className='viewboards'>
+          
             {props.boardnumber==null
                 ?<div>
                 {
                     props.allBoards.map((board,index)=>{
-                return<div key={index} style={{border:'1px red solid'}} onClick={()=>props.viewBoard(index)}>
-                <h3>{board.name}</h3>
+                return<div key={index}  onClick={()=>props.viewBoard(index)} className='board'>
+                <h3>{board.name} [{board.Tasks.length}]</h3>
                 
-                {board.Tasks.length==0?'No Task Found'
+                {board.Tasks.length==0?'Click to add Tasks'
                 :
-                <div>{board.Tasks.map((task,index)=>{
+                <div className='task'>{board.Tasks.map((task,index)=>{
                    
                    return <div key={index}>
-                    <p>{task.taskname}</p>
+                    <p>{task.taskname} <span style={{fontSize:'10px'}}>  [{task.status}] </span></p>
                   
                     </div>
                 }
@@ -51,7 +51,7 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps=(dispatch)=>{
     return{
         viewBoard:(index)=>{
-            console.log('view board',index)
+          
             dispatch({type:'boardnumber',text:index})
         }
 
